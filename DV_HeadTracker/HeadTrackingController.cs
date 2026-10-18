@@ -117,12 +117,10 @@ namespace DV_HeadTracker
 
             HeadTrackingStartupController.Activate();
 
-            Main.Log(
-                $"Head tracking recentered | Yaw={_centreYaw:F2} | Pitch={_centrePitch:F2}",
-                true);
+            Main.Log($"Head tracking recentered | Yaw={_centreYaw:F2} | Pitch={_centrePitch:F2}");
         }
 
-
+        
         public static bool ConsumeRecenterRequest()
         {
             if (!_recenterRequested)
@@ -156,7 +154,7 @@ namespace DV_HeadTracker
                 if (yaw <= Main.Settings.yawDeadzone)
                 {
                     _waitingForHeadCentre = false;
-                    Main.Log("Head tracking re-armed.", true);
+                    Main.Log("Head tracking re-armed.");
                 }
             }
 
@@ -193,7 +191,7 @@ namespace DV_HeadTracker
 
                     _cursorRequested = true;
 
-                    Main.Log("Head tracking requested screenspace mouse.", true);
+                    Main.Log("Head tracking requested screenspace mouse.");
                 }
             }
             else
@@ -212,7 +210,7 @@ namespace DV_HeadTracker
 
             _cursorRequested = false;
 
-            Main.Log("Head tracking released menu cursor.", true);
+            Main.Log("Head tracking released menu cursor.");
         }
 
         public static void AlignBodyToHead(CustomFirstPersonController controller)
@@ -244,9 +242,7 @@ namespace DV_HeadTracker
             controller.RotateViewBy(
                 new Vector2(yaw, pitch));
 
-            Main.Log(
-                $"Body aligned to head | Yaw={yaw:F2} | Pitch={pitch:F2}",
-                true);
+            Main.Log($"Body aligned to head | Yaw={yaw:F2} | Pitch={pitch:F2}");
         }
 
         public static void ReturnToMouseView()
@@ -259,7 +255,7 @@ namespace DV_HeadTracker
 
             ReleaseCursorRequest();
 
-            Main.Log("Returned to mouse view; waiting for head centre.", true);
+            Main.Log("Returned to mouse view; waiting for head centre.");
         }
 
         public static void ToggleViewLock()
@@ -270,9 +266,7 @@ namespace DV_HeadTracker
                 _lockedPitch = EffectivePitch;
                 _viewLocked = true;
 
-                Main.Log(
-                    $"Head view frozen | Yaw={_lockedYaw:F2} | Pitch={_lockedPitch:F2}",
-                    true);
+                Main.Log($"Head view frozen | Yaw={_lockedYaw:F2} | Pitch={_lockedPitch:F2}");
             }
             else
             {
@@ -299,9 +293,7 @@ namespace DV_HeadTracker
 
             NativeCrosshairBridge.RequestShow();
 
-            Main.Log(
-                "Head tracking runtime state cleared.",
-                true);
+            Main.Log("Head tracking runtime state cleared.");
         }
         public static void ResetSession()
         {
@@ -468,7 +460,7 @@ namespace DV_HeadTracker
                 _cursorButtons = GameObject.Find(
                     "[MAIN]/[GameUI]/[NewCanvasController]/Auxiliary Canvas, EventSystem, Input Module/TopOfLocoHUDGroup/CursorButtonsGroup");
 
-                Main.Log($"CursorButtons found={_cursorButtons != null}", true);
+                Main.Log($"CursorButtons found={_cursorButtons != null}");
             }
 
             if (_weatherButton == null)
@@ -476,7 +468,7 @@ namespace DV_HeadTracker
                 _weatherButton = GameObject.Find(
                     "[MAIN]/[GameUI]/common/HUDManager/ControlsGroup/PhotoModeWeatherSettings");
 
-                Main.Log($"WeatherButton found={_weatherButton != null}", true);
+                Main.Log($"WeatherButton found={_weatherButton != null}");
             }
         }
 

@@ -66,9 +66,7 @@ namespace DV_HeadTracker
                 _seatYawField == null ||
                 _seatPitchField == null)
             {
-                Main.Log(
-                    "[DV_HeadTracker] DV_People Seat View compatibility: required members not found.",
-                    true);
+                Main.Log("[DV_HeadTracker] DV_People Seat View compatibility: required members not found.");
                 return;
             }
 
@@ -84,15 +82,11 @@ namespace DV_HeadTracker
 
                 _patched = true;
 
-                Main.Log(
-                    "[DV_HeadTracker] DV_People Seat View compatibility enabled.",
-                    true);
+                Main.Log("[DV_HeadTracker] DV_People Seat View compatibility enabled.");
             }
             catch (Exception ex)
             {
-                Main.Log(
-                    "[DV_HeadTracker] DV_People Seat View patch failed: " + ex,
-                    true);
+                Main.Log("[DV_HeadTracker] DV_People Seat View patch failed: " + ex);
             }
         }
 

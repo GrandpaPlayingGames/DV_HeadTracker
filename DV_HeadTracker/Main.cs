@@ -38,7 +38,7 @@ namespace DV_HeadTracker
 
             _loaded = true;
 
-            Log("[DV_HeadTracker] Mod loaded successfully.", true);
+            Log("[DV_HeadTracker] Mod loaded successfully.");
             Debug.Log($"[CONFIRM] Version = {Application.unityVersion}");
             return true;
         }
@@ -130,9 +130,7 @@ namespace DV_HeadTracker
         {
             _headTrackingEnabled = !_headTrackingEnabled;
 
-            Log(
-                $"[DV_HeadTracker] Head tracking {(_headTrackingEnabled ? "ON" : "OFF")}",
-                true);
+            Log($"[DV_HeadTracker] Head tracking {(_headTrackingEnabled ? "ON" : "OFF")}");
         }      
 
         private static CharacterControllerProvider _cachedProvider;
@@ -160,12 +158,12 @@ namespace DV_HeadTracker
 
                 if (!FastTravelController.IsFastTravelling)
                 {
-                    Log("[DV_HeadTracker] TRUE EXIT → ResetRuntime()", true);
+                    Log("[DV_HeadTracker] TRUE EXIT → ResetRuntime()");
                     ResetRuntime();
                 }
                 else
                 {
-                    Log("[DV_HeadTracker] Fast travel → skipping ResetRuntime()", true);
+                    Log("[DV_HeadTracker] Fast travel → skipping ResetRuntime()");
                 }
             }
 
@@ -199,13 +197,13 @@ namespace DV_HeadTracker
 
         private static void OnGameLoaded()
         {
-            Log("[DV_HeadTracker] OnGameLoaded fired", true);
+            Log("[DV_HeadTracker] OnGameLoaded fired");
         }
 
 
         public static void ResetRuntime()
         {
-            Log("[DV_HeadTracker] ResetRuntime called.", true);
+            Log("[DV_HeadTracker] ResetRuntime called.");
 
             OpenTrackReceiver.Stop();
 

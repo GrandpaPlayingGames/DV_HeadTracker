@@ -85,11 +85,11 @@ namespace DV_HeadTracker
                 _receiveThread.IsBackground = true;
                 _receiveThread.Start();
 
-                Main.Log("[DV_HeadTracker] OpenTrack UDP receiver started on port 4242.", true);
+                Main.Log("[DV_HeadTracker] OpenTrack UDP receiver started on port 4242.");
             }
             catch (Exception ex)
             {
-                Main.Log("[DV_HeadTracker] Failed to start OpenTrack UDP receiver: " + ex, true);
+                Main.Log("[DV_HeadTracker] Failed to start OpenTrack UDP receiver: " + ex);
             }
         }
 
@@ -153,7 +153,7 @@ namespace DV_HeadTracker
                 }
                 catch (Exception ex)
                 {
-                    Main.Log("[DV_HeadTracker] OpenTrack receive error: " + ex, true);
+                    Main.Log("[DV_HeadTracker] OpenTrack receive error: " + ex);
                 }
             }
         }
